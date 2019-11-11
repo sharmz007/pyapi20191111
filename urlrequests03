@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+
+import requests
+
+GLOBALVAR2 = 'http://api.open-notify.org/astros.json'
+
+def main():
+    
