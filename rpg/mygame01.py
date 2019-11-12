@@ -74,7 +74,10 @@ while True:
     #check that they are allowed wherever they want to go
     if move[1] in rooms[currentRoom]:
       #set the current room to the new room
+      print(rooms)
+      print(rooms[currentRoom])
       currentRoom = rooms[currentRoom][move[1]]
+      print(currentRoom)
     #there is no door (link) to the new room
     else:
         print('You can\'t go that way!')

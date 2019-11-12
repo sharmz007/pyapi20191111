@@ -25,7 +25,9 @@ def main():
     ## This will cause a key error
     ## toast01 is not a key
     try:
-       hostipdict['toast01']
+       print(hostipdict)
+       hostipdict.pop('toast01')
+       print(hostipdict)
     except KeyError:
        print("Key not found")
        
