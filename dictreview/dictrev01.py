@@ -24,7 +24,11 @@ def main():
 
     ## This will cause a key error
     ## toast01 is not a key
-    ##hostipdict['toast01']
+    try:
+       hostipdict['toast01']
+    except KeyError:
+       print("Key not found")
+       
 
 
 if __name__ == "__main__":
