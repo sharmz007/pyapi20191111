@@ -17,8 +17,8 @@ def hello_root():
 def hello_world():
    return "Hello World"
 app.add_url_rule("/test", "test", hello_world)
-app.add_url_rule("/newtest", "newtest", hello_root)
-
+app.add_url_rule("/newtest", "newtest", hello_world)
+app.add_url_rule("/new", "newtest", hello_world)
 
 if __name__ == "__main__":
    app.run(port=5008) # runs the application

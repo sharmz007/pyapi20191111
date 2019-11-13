@@ -8,6 +8,7 @@ app = Flask(__name__)
 def success(name):
     return f"Welcome {name}\n"
 
+@app.route("/")
 @app.route("/start")
 def start():
     return render_template("postmaker.html")
@@ -15,7 +16,10 @@ def start():
 @app.route("/login", methods = ["POST", "GET"])
 def login():
     if request.method == "POST":
-        user = request.form.get("nm")
+        if request.form.get("nm"):
+            user = request.form.get("nm")
+        else:
+            user = "defaultuser"
     elif request.method == "GET":
         if request.args.get("nm"): # if nm was assigned as a parameter=value
             user = request.args.get("nm") # pull nm from localhost:5060/login?nm=larry
