@@ -19,6 +19,7 @@ def main():
 
     ## iterate across the files within directory
     for x in os.listdir("/home/student/filestocopy/"): # iterate on directory contents
+        print(x)
         if not os.path.isdir("/home/student/filestocopy/"+x): # filter everything
                                                               # that is NOT a directory
             sftp.put("/home/student/filestocopy/"+x, "/tmp/"+x) # move file to target location
