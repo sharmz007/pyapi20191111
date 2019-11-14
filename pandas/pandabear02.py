@@ -39,21 +39,26 @@ movies = pd.concat([movies_sheet1, movies_sheet2, movies_sheet3])
 print(movies.shape)
 
 # sort DataFrame based on Gross Earnings
-sorted_by_gross = movies.sort_values(["Gross Earnings"], ascending=False)
+#sorted_by_gross = movies.sort_values(["Gross Earnings"], ascending=False)
+sorted_by_gross_ascending = movies.sort_values(["Gross Earnings"], ascending=True)
+
 
 # Data is sorted by values in a column
 # display the top 10 movies by Gross Earnings.
 # passing the 10 values to head returns the top 10 not the default 5
-print(sorted_by_gross.head(10))
+#print(sorted_by_gross.head(10))
+print(sorted_by_gross_ascending.head(15))
 
 # create a stacked bar graph
-sorted_by_gross['Gross Earnings'].head(10).plot(kind="barh")
+#sorted_by_gross['Gross Earnings'].head(10).plot(kind="barh")
+sorted_by_gross_ascending['Gross Earnings'].head(15).plot(kind="barh")
 # save the figure as stackedbar.png
-plt.savefig("stackedbar.png")
+#plt.savefig("stackedbar.png")
+plt.savefig("stackedbarlow.png")
 
 # create a histogram of IMDB Scores to check distro
-movies['IMDB Score'].plot(kind="hist")
+#movies['IMDB Score'].plot(kind="hist")
 # save the figure as imdbscore.png
-plt.savefig("imdbscore.png")
+#plt.savefig("imdbscore.png")
 
-movies.to_excel("moviesonesheet.xls")
+movies.to_excel("moviesonesheet02.xls")
